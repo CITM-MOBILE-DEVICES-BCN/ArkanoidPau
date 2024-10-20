@@ -10,8 +10,6 @@ public class BlockLogic : MonoBehaviour
         GameManager.instance.BlockModify(this);
     }
 
-    
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Ball")

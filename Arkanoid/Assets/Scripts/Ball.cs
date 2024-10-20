@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [SerializeField] Transform player;
     [SerializeField] Rigidbody2D rigidBody;
     void Start()
     {
@@ -13,6 +14,15 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            transform.parent = player;
+            transform.localPosition = new Vector3(0.0116618071f, 1.4999994f, 0);
+            rigidBody.velocity = Vector2.zero;
+            GameManager.instance.LoseLive();
+            Invoke("ballStart", 2);
+        }
+
         if (collision.gameObject.tag == "Player")
         {
             float hitPoint = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;

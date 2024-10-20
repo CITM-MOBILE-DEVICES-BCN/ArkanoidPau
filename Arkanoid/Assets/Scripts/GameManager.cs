@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     
     int blockCount = 0;
-    int score = 0;
+    public int score = 0;
+    public int lives = 3;
     public static GameManager instance;
 
     void Awake()
@@ -68,5 +69,13 @@ public class GameManager : MonoBehaviour
     {
         score += 10;
         
+    }
+    public void LoseLive()
+    {
+        lives--;
+        if (lives == 0)
+        {
+            Debug.Log("Game Over!");
+        }
     }
 }
