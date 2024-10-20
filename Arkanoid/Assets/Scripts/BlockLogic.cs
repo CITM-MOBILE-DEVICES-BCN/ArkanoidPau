@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockLogic : MonoBehaviour
 {
     public int health = 1;
-    void Awake()
+    void Start()
     {
         GameManager.instance.BlockModify(this);
     }

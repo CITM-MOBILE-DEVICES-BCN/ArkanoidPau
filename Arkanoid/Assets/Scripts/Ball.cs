@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody;
     void Start()
     {
-        rigidBody.velocity = new Vector2(0, -2f);
+        Invoke("ballStart", 2);
     }
 
     // Update is called once per frame
@@ -25,5 +25,12 @@ public class Ball : MonoBehaviour
         {
             rigidBody.velocity = rigidBody.velocity.normalized * 17;
         }
+    }
+    void ballStart()
+    {
+
+        rigidBody.velocity = new Vector2(0, -2);
+        transform.SetParent(null);
+
     }
 }
