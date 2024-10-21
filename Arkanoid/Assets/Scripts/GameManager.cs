@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     public static GameManager instance;
+    public bool autoPlay = false;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
     public void BlockModify(BlockLogic block)
