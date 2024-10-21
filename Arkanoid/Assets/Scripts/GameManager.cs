@@ -25,32 +25,17 @@ public class GameManager : MonoBehaviour
 
     public void BlockModify(BlockLogic block)
     {
-        block.health = Random.Range(1, 8);
+        block.health = Random.Range(1, 4);
         switch (block.health)
         {
             case 1:
-                block.GetComponent<SpriteRenderer>().color = Color.red;
+                block.GetComponent<SpriteRenderer>().color = Color.white;
                 break;
             case 2:
-                block.GetComponent<SpriteRenderer>().color = Color.yellow;
+                block.GetComponent<SpriteRenderer>().color = Color.gray;
                 break;
             case 3:
-                block.GetComponent<SpriteRenderer>().color = Color.green;
-                break;
-            case 4:
-                block.GetComponent<SpriteRenderer>().color = Color.blue;
-                break;
-            case 5:
-                block.GetComponent<SpriteRenderer>().color = Color.magenta;
-                break;
-            case 6:
-                block.GetComponent<SpriteRenderer>().color = Color.cyan;
-                break;
-            case 7:
                 block.GetComponent<SpriteRenderer>().color = Color.black;
-                break;
-            case 8:
-                block.GetComponent<SpriteRenderer>().color = Color.white;
                 break;
         }
         blockCount++;

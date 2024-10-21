@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 public class BlockLogic : MonoBehaviour
 {
@@ -30,24 +31,9 @@ public class BlockLogic : MonoBehaviour
                     GetComponent<SpriteRenderer>().color = Color.white;
                     break;
                 case 2:
-                    GetComponent<SpriteRenderer>().color = Color.grey;
+                    GetComponent<SpriteRenderer>().color = Color.gray;
                     break;
                 case 3:
-                    GetComponent<SpriteRenderer>().color = Color.green;
-                    break;
-                case 4:
-                    GetComponent<SpriteRenderer>().color = Color.blue;
-                    break;
-                case 5:
-                    GetComponent<SpriteRenderer>().color = Color.magenta;
-                    break;
-                case 6:
-                    GetComponent<SpriteRenderer>().color = Color.cyan;
-                    break;
-                case 7:
-                    GetComponent<SpriteRenderer>().color = Color.red;
-                    break;
-                case 8:
                     GetComponent<SpriteRenderer>().color = Color.black;
                     break;
             }
