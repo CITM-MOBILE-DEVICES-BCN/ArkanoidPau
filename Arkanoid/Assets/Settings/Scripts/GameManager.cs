@@ -11,7 +11,12 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public static GameManager instance;
     public bool autoPlay = false;
+    public bool isPaused = false;
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
+
+    [SerializeField] GameObject soundManager;
     void Awake()
     {
         if (instance == null)
@@ -28,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void BlockModify(BlockLogic block)
     {
-        block.health = Random.Range(1, 4);
+        block.health = Random.Range(1, 1);
         switch (block.health)
         {
             case 1:
@@ -50,27 +55,24 @@ public class GameManager : MonoBehaviour
         blockCount--;
         if (blockCount == 0)
         {
-            if (SceneManager.GetActiveScene().name == "Level1")
-            {
-                SceneManager.LoadScene("Level2");
-            }
-            if (SceneManager.GetActiveScene().name == "Level2")
-            {
-                SceneManager.LoadScene("Level1");
-            }
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+            GameManager.instance.isPaused = true;
         }
     }
     public void OnBlockHit()
     {
         score += 10;
-        
     }
     public void LoseLive()
     {
         lives--;
         if (lives == 0)
         {
-            Debug.Log("Game Over!");
+            Time.timeScale = 0;
+            loseScreen.SetActive(true);
+            GameManager.instance.isPaused = true;
         }
     }
+ 
 }

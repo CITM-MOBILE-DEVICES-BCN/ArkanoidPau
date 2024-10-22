@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(GameManager.instance.autoPlay);
+        
+        Time.timeScale = 1;
+        GameManager.instance.isPaused = false;
         if (GameManager.instance.autoPlay)
         {
             autoPlay = true;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void ManualPlay()
     {
+        if (GameManager.instance.isPaused == false) 
         transform.position = new Vector3(Mathf.Lerp(-6.89f, 6.89f, playerSlider.value), transform.position.y, transform.position.z);
     }
 }
