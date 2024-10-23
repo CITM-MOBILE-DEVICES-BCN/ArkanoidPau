@@ -20,6 +20,11 @@ public class ButtonFunctions : MonoBehaviour
         GameManager.instance.autoPlay = true;
     }
 
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
     public void Continue()
     {
         if (SceneManager.GetActiveScene().name == "Level1")

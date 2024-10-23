@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public Slider playerSlider;
     bool autoPlay = false;
-    [SerializeField] Transform ball;
+    public Transform ball;
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         if (ball.parent == null)
         {
-            transform.position = new Vector3(ball.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(ball.position.x+.4f, transform.position.y, transform.position.z);
             
         }
         

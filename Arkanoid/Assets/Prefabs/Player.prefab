@@ -19,22 +19,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4560261895246303624
-Transform:
+--- !u!224 &4560261895246303624
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8796154413683124517}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.42, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.43, y: 0.26, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7360550459519104162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -4.42}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2819512157826234014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSlider: {fileID: 0}
+  ball: {fileID: 0}
 --- !u!61 &6354327711841895102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,10 +162,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 5097457269472555419, guid: 76f65fcee56d2ac4a9314672916ef7a8, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 4560261895246303624}
     - target: {fileID: 5489495038923185994, guid: 76f65fcee56d2ac4a9314672916ef7a8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.116618074

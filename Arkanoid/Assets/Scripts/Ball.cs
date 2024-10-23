@@ -6,8 +6,11 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] Rigidbody2D rigidBody;
+    Vector3 originalSize;
+    [SerializeField] Transform canvas;
     void Start()
     {
+        originalSize = transform.lossyScale;
         Invoke("ballStart", 2);
     }
 
@@ -16,8 +19,9 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeathZone")
         {
-            transform.parent = player;
-            transform.localPosition = new Vector3(0.0116618071f, 1.4999994f, 0);
+            //transform.localScale = originalSize;
+            transform.SetParent(player);
+            transform.localPosition = new Vector3(0.00563721033f, 1.92999995f, -68.4346924f);
             rigidBody.velocity = Vector2.zero;
             GameManager.instance.LoseLive();
             Invoke("ballStart", 2);
@@ -25,9 +29,14 @@ public class Ball : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            float velocity = rigidBody.velocity.magnitude;
             float hitPoint = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;
             Vector2 direction = new Vector2(hitPoint, 1).normalized;
-            rigidBody.velocity = direction * 7;
+            if (GameManager.instance.autoPlay)
+            {
+                direction.x = Random.Range(-1f,1f);
+            }
+            rigidBody.velocity = direction * velocity;
         }
         rigidBody.velocity *= 1.05f;
         //limit rigidBody velocity
@@ -39,8 +48,8 @@ public class Ball : MonoBehaviour
     void ballStart()
     {
 
-        rigidBody.velocity = new Vector2(0, -2);
-        transform.SetParent(null);
+        rigidBody.velocity = new Vector2(1, 4);
+        transform.SetParent(canvas);
 
     }
 }

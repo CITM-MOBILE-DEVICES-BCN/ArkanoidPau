@@ -6,6 +6,8 @@ using static Unity.Collections.AllocatorManager;
 public class BlockLogic : MonoBehaviour
 {
     public int health = 1;
+    [SerializeField] GameObject powerUp;
+    public bool powerUpBlock;
     void Start()
     {
         GameManager.instance.BlockModify(this);
@@ -23,6 +25,10 @@ public class BlockLogic : MonoBehaviour
             else
             {
                 GameManager.instance.OnBlockDestroy();
+                if (powerUpBlock)
+                {
+                    Instantiate(powerUp, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
             switch (health)

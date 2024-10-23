@@ -46,6 +46,16 @@ public class GameManager : MonoBehaviour
                 block.GetComponent<SpriteRenderer>().color = Color.black;
                 break;
         }
+        
+        if (Random.Range(0, 100) < 70)
+        {
+            block.powerUpBlock = true;
+        }
+        else
+        {
+            block.powerUpBlock = false;
+        }
+
         blockCount++;
     }
 
