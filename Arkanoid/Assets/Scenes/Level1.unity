@@ -344,7 +344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 22.762024, y: -24.87799}
+  m_AnchoredPosition: {x: 22.761963, y: -24.878052}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.65676624, y: 0.4373548}
 --- !u!61 &45094339
@@ -1597,7 +1597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22.799988, y: -24.299988}
+  m_AnchoredPosition: {x: -22.800049, y: -24.299927}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &394672016
@@ -4395,6 +4395,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2340275302736472407, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: m_Volume
+      value: 0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340275302736472407, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dde289ec1c679044a0d3d7f51297b79, type: 3}
+    - target: {fileID: 6401772052988499157, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: m_Volume
+      value: 0.862
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744159588551804989, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 09a98be7c65cadf458850b4401287303, type: 3}
+    - target: {fileID: 7744159588551804989, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 8300000, guid: 70867b0c8a01a214c88ba59bd0cf1152, type: 3}
+    - target: {fileID: 7744159588551804989, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: loseLife
+      value: 
+      objectReference: {fileID: 8300000, guid: b30e050bb586bfd4882d871f17bd5895, type: 3}
+    - target: {fileID: 7744159588551804989, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
+      propertyPath: levelComplete
+      value: 
+      objectReference: {fileID: 8300000, guid: fda1f61d210bc1045b71c4c18e16e126, type: 3}
     - target: {fileID: 8269154192281272676, guid: a38e797a1fa72c74994e3d9fd9df24bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.86
