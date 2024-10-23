@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject loseScreen;
 
+    public SaveLoad saveLoad;
+    public float highScore;
 
-    [SerializeField] GameObject soundManager;
     void Awake()
     {
+        saveLoad = new SaveLoad();
         if (instance == null)
         {
             instance = this;
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void BlockModify(BlockLogic block)
     {
-        block.health = Random.Range(1, 1);
+        block.health = Random.Range(1, 4);
         switch (block.health)
         {
             case 1:
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         
-        if (Random.Range(0, 100) < 70)
+        if (Random.Range(0, 100) < 20)
         {
             block.powerUpBlock = true;
         }
@@ -65,23 +67,32 @@ public class GameManager : MonoBehaviour
         blockCount--;
         if (blockCount == 0)
         {
+
             Time.timeScale = 0;
             winScreen.SetActive(true);
+            SoundManager.instance.PlaySound(SoundManager.instance.levelComplete);
             GameManager.instance.isPaused = true;
         }
     }
     public void OnBlockHit()
     {
-        score += 10;
+        score += 50;
+        if (score > highScore)
+        {
+            highScore = score;
+        }
     }
     public void LoseLive()
     {
         lives--;
+        SoundManager.instance.PlaySound(SoundManager.instance.loseLife);
         if (lives == 0)
         {
             Time.timeScale = 0;
             loseScreen.SetActive(true);
             GameManager.instance.isPaused = true;
+            GameManager.instance.saveLoad.Reload();
+            SoundManager.instance.PlaySound(SoundManager.instance.gameOver);
         }
     }
  

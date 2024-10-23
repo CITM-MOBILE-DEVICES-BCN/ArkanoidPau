@@ -8,6 +8,7 @@ public class HUDLogic : MonoBehaviour
 {
     [SerializeField] TMP_Text scoreText;
     [SerializeField] TMP_Text healthText;
+    [SerializeField] TMP_Text highScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,6 @@ public class HUDLogic : MonoBehaviour
     {
         scoreText.text = "Score:" + GameManager.instance.score.ToString();
         healthText.text = "Lives:" + GameManager.instance.lives.ToString();
+        highScoreText.text = "HighScore:" + GameManager.instance.highScore.ToString();
     }
 }

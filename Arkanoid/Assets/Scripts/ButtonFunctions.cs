@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour
 {
+
     public void StartGame()
     {
         GameManager.instance.score = 0;
         GameManager.instance.lives = 3;
+        GameManager.instance.saveLoad.Reload();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
@@ -30,10 +32,12 @@ public class ButtonFunctions : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level1")
         {
             SceneManager.LoadScene("Level2");
+            GameManager.instance.saveLoad.Save("Level2");
         }
         if (SceneManager.GetActiveScene().name == "Level2")
         {
             SceneManager.LoadScene("Level1");
+            GameManager.instance.saveLoad.Save("Level1");
         }
     }
     public void AutoPlay()
@@ -44,8 +48,4 @@ public class ButtonFunctions : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
-    public void SaveAndExit()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-    }
 }

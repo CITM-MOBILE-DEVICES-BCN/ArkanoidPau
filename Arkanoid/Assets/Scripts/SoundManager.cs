@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] AudioSource audioSource;
+
+    public AudioClip bounceSound;
+    public AudioClip powerUp;
+    public AudioClip levelComplete;
+    public AudioClip loseLife;
+    public AudioClip gameOver;
+
+    public static SoundManager instance;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-        
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

@@ -25,6 +25,9 @@ public class Ball : MonoBehaviour
             rigidBody.velocity = Vector2.zero;
             GameManager.instance.LoseLive();
             Invoke("ballStart", 2);
+        }else
+        {
+            SoundManager.instance.PlaySound(SoundManager.instance.bounceSound);
         }
 
         if (collision.gameObject.tag == "Player")
@@ -38,11 +41,12 @@ public class Ball : MonoBehaviour
             }
             rigidBody.velocity = direction * velocity;
         }
-        rigidBody.velocity *= 1.05f;
+        rigidBody.velocity *= 1.01f;
+      
         //limit rigidBody velocity
-        if (rigidBody.velocity.magnitude > 17)
+        if (rigidBody.velocity.magnitude > 4)
         {
-            rigidBody.velocity = rigidBody.velocity.normalized * 17;
+            rigidBody.velocity = rigidBody.velocity.normalized * 4;
         }
     }
     void ballStart()
