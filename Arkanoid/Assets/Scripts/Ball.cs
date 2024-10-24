@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody;
     Vector3 originalSize;
     [SerializeField] Transform canvas;
-    bool followPlayer;
+    public bool followPlayer;
     void Start()
     {
         originalSize = transform.lossyScale;
@@ -42,15 +42,12 @@ public class Ball : MonoBehaviour
             SoundManager.instance.PlaySound(SoundManager.instance.bounceSound);
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && GameManager.instance.autoPlay == false)
         {
             float velocity = rigidBody.velocity.magnitude;
             float hitPoint = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;
             Vector2 direction = new Vector2(hitPoint, 1).normalized;
-            if (GameManager.instance.autoPlay)
-            {
-                direction.x = Random.Range(-1f,1f);
-            }
+
             rigidBody.velocity = direction * velocity;
         }
         rigidBody.velocity *= 1.03f;

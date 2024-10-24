@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void AutoPlay()
     {
-        if (ball.parent.gameObject.name == "GamePlay")
+        if (ball.GetComponent<Ball>().followPlayer == false)
         {
             transform.position = new Vector3(ball.position.x+.4f, transform.position.y, transform.position.z);
         }
