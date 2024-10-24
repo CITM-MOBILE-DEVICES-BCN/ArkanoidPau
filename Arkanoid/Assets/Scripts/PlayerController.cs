@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Slider playerSlider;
     bool autoPlay = false;
     public Transform ball;
+    [SerializeField] Transform leftWall;
+    [SerializeField] Transform rightWall;
 
     private void Start()
     {
@@ -39,7 +41,6 @@ public class PlayerController : MonoBehaviour
     {
         if (ball.parent.gameObject.name == "GamePlay")
         {
-            Debug.Log("shabalbablu");
             transform.position = new Vector3(ball.position.x+.4f, transform.position.y, transform.position.z);
         }
         
@@ -48,6 +49,6 @@ public class PlayerController : MonoBehaviour
     void ManualPlay()
     {
         if (GameManager.instance.isPaused == false) 
-        transform.position = new Vector3(Mathf.Lerp(-6.89f, 6.89f, playerSlider.value), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Lerp(leftWall.position.x, rightWall.position.x, playerSlider.value), transform.position.y, transform.position.z);
     }
 }

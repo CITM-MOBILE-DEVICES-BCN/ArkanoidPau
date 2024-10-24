@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void BlockModify(BlockLogic block)
     {
-        block.health = Random.Range(1, 4);
+        block.health = Random.Range(1, 1);
         switch (block.health)
         {
             case 1:
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         
-        if (Random.Range(0, 100) < 20)
+        if (Random.Range(0, 100) < 90)
         {
             block.powerUpBlock = true;
         }

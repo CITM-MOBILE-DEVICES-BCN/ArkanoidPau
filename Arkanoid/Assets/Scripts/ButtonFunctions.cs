@@ -27,6 +27,11 @@ public class ButtonFunctions : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
+    public void LoadGame()
+    {
+        GameManager.instance.saveLoad.Load();
+    }
+
     public void Continue()
     {
         if (SceneManager.GetActiveScene().name == "Level1")

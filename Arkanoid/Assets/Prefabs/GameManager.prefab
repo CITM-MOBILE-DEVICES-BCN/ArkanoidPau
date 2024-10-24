@@ -68,10 +68,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6401772052988499157}
   bounceSound: {fileID: 8300000, guid: f96f73c48f559c04a95483cea53c78ca, type: 3}
-  powerUp: {fileID: 0}
-  levelComplete: {fileID: 0}
-  loseLife: {fileID: 0}
-  gameOver: {fileID: 0}
+  powerUp: {fileID: 8300000, guid: 09a98be7c65cadf458850b4401287303, type: 3}
+  levelComplete: {fileID: 8300000, guid: fda1f61d210bc1045b71c4c18e16e126, type: 3}
+  loseLife: {fileID: 8300000, guid: b30e050bb586bfd4882d871f17bd5895, type: 3}
+  gameOver: {fileID: 8300000, guid: 70867b0c8a01a214c88ba59bd0cf1152, type: 3}
 --- !u!82 &6401772052988499157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.862
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -178,9 +178,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4dde289ec1c679044a0d3d7f51297b79, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 1
   Mute: 0
